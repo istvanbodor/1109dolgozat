@@ -1,13 +1,14 @@
 import { Statue } from "./statue";
 import { Artwork } from "./artwork";
 
-let lista : Artwork[];
+let lista : Artwork[] =[];
 
-
+let osszar : number =0;
+let muvek : number =0;
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
+        
 
       document.getElementById('gomb')?.addEventListener('click', () =>{
 
@@ -58,7 +59,25 @@ document.addEventListener('DOMContentLoaded', () => {
             (document.getElementById('magassaghiba') as HTMLLabelElement).textContent = "A magasság mező helytelen"
 
 
+        } else {
+
+             
+            lista.push(new Statue(nev, parseInt(ev), ar, magassag));
+            (document.getElementById('nev') as HTMLInputElement).value = "";    
+            (document.getElementById('ar') as HTMLInputElement).value = "";
+            (document.getElementById('ev') as HTMLInputElement).value = "";
+            (document.getElementById('magassag') as HTMLInputElement).value = "";
+
+
+            osszar+=ar;
+            muvek++;
+            document.getElementById('mudarab')!.textContent = 'Művek darabszáma: '+muvek;
+            document.getElementById('muar')!.textContent = 'Művek ára: '+osszar;
+
+
+
         }
+
 
 
 

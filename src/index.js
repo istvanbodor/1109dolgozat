@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-let lista;
+const statue_1 = require("./statue");
+let lista = [];
+let osszar = 0;
+let muvek = 0;
 document.addEventListener('DOMContentLoaded', () => {
     var _a;
     (_a = document.getElementById('gomb')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
@@ -28,6 +31,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         else if (!magassagellenorzo.test(magassag.toString())) {
             document.getElementById('magassaghiba').textContent = "A magasság mező helytelen";
+        }
+        else {
+            lista.push(new statue_1.Statue(nev, parseInt(ev), ar, magassag));
+            document.getElementById('nev').value = "";
+            document.getElementById('ar').value = "";
+            document.getElementById('ev').value = "";
+            document.getElementById('magassag').value = "";
+            osszar += ar;
+            muvek++;
+            document.getElementById('mudarab').textContent = 'Művek darabszáma: ' + muvek;
+            document.getElementById('muar').textContent = 'Művek ára: ' + osszar;
         }
     });
 });
