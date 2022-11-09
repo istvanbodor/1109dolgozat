@@ -1,0 +1,33 @@
+body {
+
+text-align: center;
+
+}
+.labelek {
+    margin-bottom: 10px;
+    margin-left: 40px;
+    
+}
+
+#divv {
+
+    text-align: left;
+    width: 50%; 
+    margin-left: 450px;
+    
+
+
+}
+
+td {
+    vertical-align: top;
+    
+}
+
+.hiba {
+
+    color: red;
+    font-size: 10px;
+
+
+}
